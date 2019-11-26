@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  background: #f8f9fa;
+  color: #333333;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: #165ba8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  background: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  height: 100px;
+  position: relative;
+  padding: 15px 15px 15px 130px;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: height 0.15s, padding 0.15s;
+}
+#header a#profile {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100px;
+  height: 100px;
+}
+#header a#profile img {
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #999999;
+}
+#header #profile-desc {
+  padding: 0;
+  margin: 0;
+  line-height: 1.2rem;
+}
+#header #profile-desc .ws {
+  font-size: 1rem;
+  margin: 0 5px;
+  font-weight: 300;
+}
+#header #profile-desc .name {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+#header #profile-desc .name .ws {
+  display: none;
+}
+#header #profile-desc .meta {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#header #profile-desc .comment {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  max-height: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666666;
+}
+#header #profile {
+  transition: width 0.15s, height 0.15s;
+}
+
+#aside {
+  position: fixed;
+  top: 130px;
+  width: 200px;
+  transition: top 0.15s;
+}
+#aside ul {
+  padding-top: 10px;
+}
+#aside ul li {
+  padding: 5px 5px 5px 20px;
+}
+#aside ul li a {
+  margin-left: 15px;
+  font-size: 0.85em;
+}
+
+#section {
+  padding-top: 10px;
+  padding-left: 220px;
+}
+#section .example {
+  margin: 0 20px 0 0;
+  padding: 50px 0 50px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+#section .example h2 {
+  margin: 20px 0 10px 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+#section .example .canvas {
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  position: relative;
+}
+#section .example .canvas::after {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #868e96;
+  content: "결과";
+  font-size: 0.7rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 2px 3px;
+}
+#section .example .canvas img {
+  width: 70%;
+  display: block;
+}
+#section .example .code {
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  position: relative;
+}
+#section .example .code::after {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #868e96;
+  content: "코드";
+  font-size: 0.7rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 2px 3px;
+}
+#section .example #c1 {
+  background: aliceblue;
+}
+#section .example #c2 {
+  background: aliceblue;
+}
+#section .example #c3 {
+  background: aliceblue;
+}
+#section .example #c4 {
+  background: aliceblue;
+}
+#section .example #c5 {
+  background: aliceblue;
+}
+#section .example:first-child {
+  padding-top: 130px;
+}
+#section .example:first-child h2 {
+  padding-top: 10px;
+  margin-top: 0;
+}
+
+body.sticky #header {
+  height: 40px;
+  padding: 10px 10px 10px 60px;
+}
+body.sticky #header #profile {
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 10px;
+}
+body.sticky #header #profile-desc .name {
+  display: inline;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+body.sticky #header #profile-desc .name .ws {
+  display: inline;
+}
+body.sticky #header #profile-desc .comment {
+  margin-top: 5px;
+}
+body.sticky #aside {
+  top: 60px;
+}
+
+/*# sourceMappingURL=style.css.map */

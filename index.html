@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>2019 Multimedia by Jaeyoung Lee</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <meta name="keywords" content="Multimedia, Canvas">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header id="header">
+        <a href="https://monodiary.net" id="profile" target="_blank">
+            <img src="images/profile.jpg" alt="profile">
+        </a>
+        <div id="profile-desc">
+            <p class="name">
+                LEE Jaeyoung
+                <span class="ws">|</span>
+            </p>
+
+            <span class="meta">
+            2011440104
+            <span class="ws">|</span>
+            University of Seoul
+            <span class="ws">|</span>
+            Electronic Computer Engineering
+            </span>
+            <p class="comment">이 페이지는 2019 Multimedia Engineering 과목 수강내용을 기반으로 작성했습니다.</p>
+        </div>
+    </header>
+    <aside id="aside">
+        <ul>
+            <li>캔버스</li>
+            <li><a href="#canvas-triangle">삼각형 그리기</a></li>
+            <li><a href="#canvas-rect">사각형 그리기</a></li>
+            <li><a href="#canvas-arc">원호 그리기</a></li>
+            <li><a href="#canvas-text">텍스트 그리기</a></li>
+            <li><a href="#canvas-bezier">Bezier Curve 그리기</a></li>
+            <li>&nbsp;</li>
+            <li>시맨틱</li>
+            <li><a href="#smt-used">사용중인 태그</a></li>
+            <li><a href="#smt-details">&lt;details&gt;, &lt;summary&gt;</a></li>
+            <li><a href="#smt-figure">&lt;figure&gt;, &lt;figcaption&gt;</a></li>
+            <li><a href="#smt-inline">인라인 요소</a></li>
+            <li>&nbsp;</li>
+            <li>이미지</li>
+            <li><a href="#image-full">이미지 꽉 차게 그리기</a></li>
+            <li><a href="#image-background-repeat">백그라운드 Repeat</a></li>
+            <li><a href="#image-background-norepeat">백그라운드 No Repeat</a></li>
+            <li><a href="#image-background-cover">백그라운드 Cover</a></li>
+            <li><a href="#image-background-stretch">백그라운드 Stretch</a></li>
+            <li><a href="#image-picture">&lt;picture>, &lt;source></a></li>
+        </ul>
+    </aside>
+    <section id="section">
+        <section id="canvas-triangle" class="example">
+            <h2>삼각형 그리기</h2>
+            <div class="canvas">
+                <canvas id="c1" width="200" height="150"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c1 = document.getElementById("c1");
+var ctx1 = c1.getContext('2d');
+ctx1.beginPath();
+ctx1.moveTo(120, 20);
+ctx1.lineTo(20, 50);
+ctx1.lineTo(150, 120);
+ctx1.lineTo(120, 20);
+ctx1.strokeStyle = "magenta";
+ctx1.stroke();
+&lt;/script></pre>
+        </section>
+
+        <section id="canvas-rect" class="example">
+            <h2>사각형 그리기</h2>
+            <div class="canvas">
+                <canvas id="c2" width="200" height="150"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c2 = document.getElementById('c2');
+var ctx2 = c2.getContext('2d');
+ctx2.beginPath();
+for(var i=0; i&lt;5; i++) {
+  ctx2.rect(10+i*30, 10+i*10, 50, 50);
+}
+ctx3.strokeStyle = 'magenta';
+ctx3.stroke();
+&lt;/script></pre>
+        </section>
+
+        <section id="canvas-arc" class="example">
+            <h2>원호 그리기</h2>
+            <div class="canvas">
+                <canvas id="c3" width="200" height="150"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c3 = document.getElementById("c3");
+var ctx3 = c3.getContext('2d');
+ctx3.beginPath();
+ctx3.strokeStyle = 'magenta';
+ctx3.arc(75, 75, 50, 0, 2*Math.PI, false);
+ctx3.moveTo(110, 75);
+ctx3.arc(75, 75, 35, 0, Math.PI, false);
+ctx3.moveTo(65, 65);
+ctx3.arc(60, 65, 5, 0, 2*Math.PI, false);
+ctx3.moveTo(95, 65);
+ctx3.arc(90, 65, 5, 0, 2*Math.PI, false);
+ctx3.stroke();
+&lt;/script></pre>
+        </section>
+
+        <section id="canvas-text" class="example">
+            <h2>텍스트 그리기</h2>
+            <div class="canvas">
+                <canvas id="c4" width="700" height="400"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c4 = document.getElementById("c4");
+var ctx4 = c4.getContext('2d');
+ctx4.strokeStyle = 'blue';
+for(var i=0; i&lt;4; i++) {
+  ctx4.font = (10 + i*10) + "px forte";
+  ctx4.strokeText("Jaeyoung's Multimedia", 10, 30+i*50);
+}
+ctx4.font = 'italic 50px forte';
+ctx4.strokeStyle = 'magenta';
+ctx4.lineWidth = 3;
+ctx4.textAligh = 'left';
+ctx4.strokeText("Jaeyoung's Multimedia", 50, 250);
+ctx4.fillStyle = 'green';
+ctx4.textAligh = 'right';
+ctx4.fillText("Jaeyoung's Multimedia", 490, 300)
+&lt;/script></pre>
+        </section>
+
+        <section id="canvas-bezier" class="example">
+            <h2>Bezier Curve 그리기</h2>
+            <div class="canvas">
+                <canvas id="c5" width="200" height="150"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c5 = document.getElementById("c5");
+var ctx5 = c5.getContext('2d');
+ctx5.beginPath();
+ctx5.moveTo(75, 40);
+ctx5.bezierCurveTo(75, 37, 70, 25, 50, 25);
+ctx5.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+ctx5.bezierCurveTo(20, 80, 40, 102, 75, 120);
+ctx5.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+ctx5.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+ctx5.bezierCurveTo(85, 25, 75, 37, 75, 40);
+ctx5.fillStyle = 'red';
+ctx5.fill();
+&lt;/script></pre>
+        </section>
+
+        <section id="smt-used" class="example">
+            <h2>사용중인 태그</h2>
+            <div class="canvas">
+                &lt;header>, &lt;aside>, &lt;section> 등의 기본적인 태그들은 현재 문서를 작성하며 사용중에 있습니다.
+            </div>
+        </section>
+
+        <section id="smt-details" class="example">
+            <h2>&lt;details&gt;, &lt;summary&gt;</h2>
+            <div class="canvas">
+                <details>
+                    <summary>Question 1</summary>
+                    <p>웹 개발자가 알아야 하는 언어 3가지?</p>
+                </details>
+
+                <details>
+                    <summary>Answer 1</summary>
+                    <p>HTML5, CSS, Javascript</p>
+                </details>
+            </div>
+            <pre class="code">&lt;details>
+    &lt;summary>Question 1&lt;/summary>
+    &lt;p>웹 개발자가 알아야 하는 언어 3가지?&lt;/p>
+&lt;/details>
+
+&lt;details>
+    &lt;summary>Answer 1&lt;/summary>
+    &lt;p>HTML5, CSS, Javascript&lt;/p>
+&lt;/details></pre>
+        </section>
+
+        <section id="smt-figure" class="example">
+            <h2>&lt;figure&gt;, &lt;figcaption&gt;</h2>
+            <div class="canvas">
+                <figure id="smt-figure-f">
+                    <figcaption>alert() 함수 활용</figcaption>
+                    <pre>
+                    <code>function f() { alert("경고합니다"); }</code>
+                    </pre>
+                    <hr>
+                    <small>실행결과</small>
+                    <pre>
+                        <img src="images/figure-result.png" alt="실행결과">
+                    </pre>
+                </figure>
+            </div>
+            <pre class="code">&lt;figure id="smt-figure-f">
+    &lt;figcaption>alert() 함수 활용&lt;/figcaption>
+    &lt;pre>
+    &lt;code>function f() { alert("경고합니다"); }&lt;/code>
+    &lt;/pre>
+    &lt;hr>
+    &lt;small>실행결과&lt;/small>
+    &lt;pre>
+        &lt;img src="images/figure-result.png" alt="실행결과">
+    &lt;/pre>
+&lt;/figure></pre>
+        </section>
+
+        <section id="smt-inline" class="example">
+            <h2>인라인 요소</h2>
+            <div class="canvas">
+                <p>
+                    내일 <mark>HTML5 시험</mark><br>
+                    시간은 <time>09:00</time><br>
+                    난이도 <meter value="0.8">80%</meter><br>
+                    자료 업로딩(20%)
+                      <progress value="2" max="10"></progress>
+                </p>
+            </div>
+            <pre class="code">&lt;p>
+    내일 &lt;mark>HTML5 시험&lt;/mark>&lt;br>
+    시간은 &lt;time>09:00&lt;/time>&lt;br>
+    난이도 &lt;meter value="0.8">80%&lt;/meter>&lt;br>
+    자료 업로딩(20%)
+    &lt;progress value="2" max="10">&lt;/progress>
+&lt;/p></pre>
+        </section>
+
+        <section id="image-full" class="example">
+            <h2>이미지 꽉 차게 그리기</h2>
+            <div class="canvas">
+                <canvas id="c6" width="500" height="300"></canvas>
+            </div>
+            <pre class="code">&lt;script>
+var c6 = document.getElementById('c6');
+var ctx6 = c6.getContext('2d');
+var img6 = new Image();
+img6.onload = function() {
+  ctx6.drawImage(img6, 0, 0, c6.width, c6.height);
+}
+img6.src = 'images/olaf.jpg';
+&lt;/script></pre>
+        </section>
+
+        <section id="image-background-repeat" class="example">
+            <h2>백그라운드 Repeat</h2>
+            <div class="canvas">
+                <div style="width: 500px; height: 500px; 
+                            background-image: url('images/green-apple.jpg');">이것은 사과입니다.</div>
+            </div>
+            <pre class="code">&lt;style>
+    width: 500px;
+    height: 500px;
+    background-image: url('images/green-apple.jpg');
+&lt;/style></pre>
+        </section>
+
+        <section id="image-background-norepeat" class="example">
+            <h2>백그라운드 No Repeat</h2>
+            <div class="canvas">
+                <div style="width: 500px; height: 500px; 
+                            background-image: url('images/green-apple.jpg');
+                            background-repeat: no-repeat;">이것은 사과입니다.</div>
+            </div>
+            <pre class="code">&lt;style>
+    width: 500px;
+    height: 500px;
+    background-image: url('images/green-apple.jpg');
+    background-repeat: no-repeat;
+&lt;/style></pre>
+        </section>
+
+        <section id="image-background-cover" class="example">
+            <h2>백그라운드 Cover</h2>
+            <div class="canvas">
+                <div style="width: 500px; height: 500px; 
+                            background-image: url('images/green-apple.jpg');
+                            background-repeat: no-repeat;
+                            background-size: cover;">이것은 사과입니다.</div>
+            </div>
+            <pre class="code">&lt;style>
+    width: 500px;
+    height: 500px;
+    background-image: url('images/green-apple.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+&lt;/style></pre>
+        </section>
+
+        <section id="image-background-stretch" class="example">
+            <h2>백그라운드 Stretch</h2>
+            <div class="canvas">
+                <div style="width: 500px; height: 500px; 
+                            background-image: url('images/green-apple.jpg');
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;">이것은 사과입니다.</div>
+            </div>
+            <pre class="code">&lt;style>
+    width: 500px;
+    height: 500px;
+    background-image: url('images/green-apple.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+&lt;/style></pre>
+        </section>
+
+        <section id="image-picture" class="example">
+            <h2>&lt;picture>, &lt;source></h2>
+            <div class="canvas">
+                <picture>
+                    <source media="(min-width: 650px)" srcset="images/banana.jpg">
+                    <source media="(min-width: 465px)" srcset="images/apple.jpg">
+                    <img src="images/green-apple.jpg" alt="fruit">
+                </picture>
+            </div>
+            <pre class="code">&lt;picture>
+    &lt;source media="(min-width: 650px)" srcset="images/banana.jpg">
+    &lt;source media="(min-width: 465px)" srcset="images/apple.jpg">
+    &lt;img src="images/green-apple.jpg" alt="fruit">
+&lt;/picture></pre>
+
+        </section>
+    </section>
+    
+    <script src="src/script.js"></script>
+</body>
+</html>

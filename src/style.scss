@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  background: #f8f9fa;
+  color: #333333;
+}
+
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a {
+  color: #165ba8;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+$profile-size: 100px;
+$profile-frame: 15px;
+$layered-profile-size: 40px;
+$layered-profile-frame: 10px;
+#header {
+  background: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  height: $profile-size;
+  position: relative;
+  padding: $profile-frame $profile-frame $profile-frame (2*$profile-frame+$profile-size);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  a#profile {
+    display: block;
+    position: absolute;
+    top: $profile-frame;
+    left: $profile-frame;
+    width: $profile-size;
+    height: $profile-size;
+
+    img {
+      width: inherit;
+      height: inherit;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px #999999;
+    }
+  }
+
+  #profile-desc {
+    padding: 0;
+    margin: 0;
+    line-height: 1.2rem;
+
+    .ws {
+      font-size: 1rem;
+      margin: 0 5px;
+      font-weight: 300;
+    }
+
+    .name {
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      .ws { display: none; }
+    }
+
+    .meta {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .comment {
+      margin-top: 10px;
+      font-size: .8rem;
+      line-height: 1.2rem;
+      max-height: 1.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #666666;
+    }
+  }
+
+  transition: height .15s, padding .15s;
+  #profile {
+    transition: width .15s, height .15s;
+  }
+}
+
+$sidebar-size: 200px;
+#aside {
+  position: fixed;
+  top: 130px;
+  width: $sidebar-size;
+  transition: top .15s;
+
+  ul {
+    padding-top: 10px;
+    li {
+      padding: 5px 5px 5px 20px;
+
+      a {
+        margin-left: 15px;
+        font-size: .85em;
+      }
+    }
+  }
+}
+
+#section {
+  padding-top: 10px;
+  padding-left: $sidebar-size + 20px;
+
+  .example {
+    margin: 0 20px 0 0;
+    padding: 50px 0 50px 0;
+    border-bottom: 1px solid #e9ecef;
+    h2 {
+      margin: 20px 0 10px 0;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .canvas {
+      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      position: relative;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #868e96;
+        content: '결과';
+        font-size: .7rem;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 2px 3px;
+      }
+
+      img {
+        width: 70%;
+        display: block;
+      }
+    }
+
+    .code {
+      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      position: relative;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #868e96;
+        content: '코드';
+        font-size: .7rem;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 2px 3px;
+      }
+    }
+
+    #c1 { background: aliceblue; }
+    #c2 { background: aliceblue; }
+    #c3 { background: aliceblue; }
+    #c4 { background: aliceblue; }
+    #c5 { background: aliceblue; }
+
+    &:first-child {
+      padding-top: 130px;
+      h2 { padding-top: 10px; margin-top: 0; }
+    }
+  }
+}
+
+body.sticky {
+  #header {
+    height: $layered-profile-size;
+    padding: $layered-profile-frame $layered-profile-frame $layered-profile-frame (2*$layered-profile-frame+$layered-profile-size);
+
+    #profile {
+      height: $layered-profile-size;
+      width: $layered-profile-size;
+      top: $layered-profile-frame;
+      left: $layered-profile-frame;
+    }
+
+    #profile-desc {
+      .name {
+        display: inline;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        .ws { display: inline; }
+      }
+
+      .comment {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  #aside {
+    top: $layered-profile-size + (2*$layered-profile-frame);
+  }
+}
