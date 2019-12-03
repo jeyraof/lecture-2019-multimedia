@@ -108,10 +108,10 @@ a:hover {
   padding-top: 10px;
 }
 #aside ul li {
-  padding: 5px 5px 5px 20px;
+  padding: 2px 2px 2px 20px;
 }
 #aside ul li a {
-  margin-left: 15px;
+  margin: 0 0 0 15px;
   font-size: 0.85em;
 }
 
@@ -217,6 +217,20 @@ body.sticky #header #profile-desc .comment {
 }
 body.sticky #aside {
   top: 60px;
+}
+
+.css3-style-1 {
+  background-color: mistyrose;
+}
+.css3-style-1 h3 {
+  color: purple;
+}
+.css3-style-1 hr {
+  border: 5px solid yellowgreen;
+}
+.css3-style-1 span {
+  color: blue;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -110,10 +110,10 @@ $sidebar-size: 200px;
   ul {
     padding-top: 10px;
     li {
-      padding: 5px 5px 5px 20px;
+      padding: 2px 2px 2px 20px;
 
       a {
-        margin-left: 15px;
+        margin: 0 0 0 15px;
         font-size: .85em;
       }
     }
@@ -223,4 +223,11 @@ body.sticky {
   #aside {
     top: $layered-profile-size + (2*$layered-profile-frame);
   }
+}
+
+.css3-style-1 {
+  background-color: mistyrose;
+  h3 { color: purple; }
+  hr { border: 5px solid yellowgreen; }
+  span { color: blue; font-size: 20px; }
 }
