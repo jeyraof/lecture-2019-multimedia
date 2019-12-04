@@ -49,6 +49,9 @@
             <li><a href="#image-picture">&lt;picture>, &lt;source></a></li>
             <li>CSS3</li>
             <li><a href="#css3-style-1">기본 CSS</a></li>
+            <li><a href="#css3-style-2">Color</a></li>
+            <li><a href="#css3-style-3">Font</a></li>
+            <li><a href="#css3-style-4">Box Model</a></li>
         </ul>
     </aside>
     <section id="section">
@@ -360,6 +363,109 @@ img6.src = 'images/olaf.jpg';
   h3 { color: purple; }
   hr { border: 5px solid yellowgreen; }
   span { color: blue; font-size: 20px; }
+}
+&lt;/style></pre>
+        </section>
+
+        <section id="css3-style-2" class="example">
+            <h2>Color</h2>
+            <div class="canvas">
+                <div class="css3-style-2">
+                <h3>CSS3 색 활용</h3>
+                    <div style="background-color: deepskyblue">deepskyblue</div>
+                    <div style="background-color: brown">brown</div>
+                    <div style="background-color: fuchsia">fuchsia</div>
+                    <div style="background-color: darkorange">darkorange</div>
+                    <div style="background-color: darkcyan">darkcyan</div>
+                    <div style="background-color: olivedrab">olivedrab</div>
+                </div>
+            </div>
+            <pre class="code">&lt;div class="css3-style-2">
+    &lt;h3>CSS3 색 활용&lt;/h3>
+    &lt;div style="background-color: deepskyblue">deepskyblue&lt;/div>
+    &lt;div style="background-color: brown">brown&lt;/div>
+    &lt;div style="background-color: fuchsia">fuchsia&lt;/div>
+    &lt;div style="background-color: darkorange">darkorange&lt;/div>
+    &lt;div style="background-color: darkcyan">darkcyan&lt;/div>
+    &lt;div style="background-color: olivedrab">olivedrab&lt;/div>
+&lt;/div>
+
+&lt;style type="type/sass">
+// <a href="https://sass-lang.com" target="_blank">sass-lang</a> : https://sass-lang.com
+.css3-style-2 div {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  color: white;
+}
+&lt;/style></pre>
+        </section>
+
+        <section id="css3-style-3" class="example">
+            <h2>Font</h2>
+            <div class="canvas">
+                <div class="css3-style-3">
+                    <h3>폰트</h3>
+                    <hr>
+                    <p style="font-weight: 900">font-weight 900</p>
+                    <p style="font-weight: 100">font-weight 100</p>
+                    <p style="font-style: italic">Italic Style</p>
+                    <p style="font-style: oblique">Oblique Style</p>
+                    <p>현재 크기의 <span stlye="font-size:1.5em">1.5배</span> 크기로</p>
+                </div>
+            </div>
+            <pre class="code">&lt;div class="css3-style-3">
+    &lt;h3>폰트&lt;/h3>
+    &lt;hr>
+    &lt;p style="font-weight: 900">font-weight 900&lt;/p>
+    &lt;p style="font-weight: 100">font-weight 100&lt;/p>
+    &lt;p style="font-style: italic">Italic Style&lt;/p>
+    &lt;p style="font-style: oblique">Oblique Style&lt;/p>
+    &lt;p>현재 크기의 &lt;span stlye="font-size:1.5em">1.5배&lt;/span> 크기로&lt;/p>
+&lt;/div>
+
+&lt;style type="type/sass">
+// <a href="https://sass-lang.com" target="_blank">sass-lang</a> : https://sass-lang.com
+.css3-style-3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+&lt;/style></pre>
+        </section>
+
+        <section id="css3-style-4" class="example">
+            <h2>Box Model</h2>
+            <div class="canvas">
+                <div class="css3-style-4">
+                    <div class="box">
+                        <span>DIVDIVDIV</span>
+                    </div>
+                </div>
+            </div>
+            <pre class="code">&lt;div class="css3-style-4">
+    &lt;div class="box">
+        &lt;span>DIVDIVDIV&lt;/span>
+    &lt;/div>
+&lt;/div> 
+
+&lt;style type="type/sass">
+// <a href="https://sass-lang.com" target="_blank">sass-lang</a> : https://sass-lang.com
+.css3-style-4 {
+  background: ghostwhite;
+  
+  div.box {
+    background: yellow;
+    border-style: solid;
+    border-color: peru;
+  
+    margin: 40px;
+    border-width: 30px;
+    padding: 20px;
+  }
+  
+  span {
+    background: deepskyblue;
+  }
 }
 &lt;/style></pre>
         </section>
